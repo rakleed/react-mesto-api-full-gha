@@ -80,9 +80,9 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-62',
+  baseUrl: 'http://api.express-mesto-rakleed.nomoredomains.xyz',
   headers: {
-    authorization: '77ad541b-04f3-4ab8-bcca-aa16374b0646',
+    authorization: `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json'
   }
 });

@@ -1,4 +1,4 @@
-const BASE_URL = 'https://auth.nomoreparties.co';
+const BASE_URL = 'http://api.express-mesto-rakleed.nomoredomains.xyz';
 
 export function register({email, password}) {
   return fetch(`${BASE_URL}/signup`, {
