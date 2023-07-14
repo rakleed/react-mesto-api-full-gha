@@ -1,0 +1,23 @@
+.cards__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  /* TODO: make cards stretchable */
+  gap: 20px 17px;
+  justify-items: center;
+  margin: 0;
+  padding: 25px 0 33px;
+  list-style: none;
+}
+
+@media screen and (max-width: 500px) {
+  .cards__list {
+    padding-top: 18px;
+    padding-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

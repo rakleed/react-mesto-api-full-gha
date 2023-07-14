@@ -1,0 +1,9 @@
+.authorization-form__login-link {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.4s;
+}
+
+.authorization-form__login-link:hover {
+  opacity: 0.6;
+}

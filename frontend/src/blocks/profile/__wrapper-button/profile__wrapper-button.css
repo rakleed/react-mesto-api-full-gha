@@ -1,0 +1,11 @@
+.profile__wrapper-button {
+  display: flex;
+  align-items: baseline;
+  column-gap: 18px;
+}
+
+@media screen and (max-width: 550px) {
+  .profile__wrapper-button {
+    column-gap: 10px;
+  }
+}

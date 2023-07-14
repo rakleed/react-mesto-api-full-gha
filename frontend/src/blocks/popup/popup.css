@@ -1,0 +1,23 @@
+@keyframes appearing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  color-scheme: light;
+  /* TODO: solve the problem that the `animation` property doesn't work (see
+           https://codepen.io/geckotang/post/dialog-with-animation) */
+  animation: appearing 0.4s;
+}

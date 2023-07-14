@@ -1,0 +1,20 @@
+.authorization-form {
+  position: relative;
+  width: 430px;
+  margin: auto;
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  .authorization-form {
+    width: 360px;
+    padding: 25px 22px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .authorization-form {
+    width: 282px;
+  }
+}

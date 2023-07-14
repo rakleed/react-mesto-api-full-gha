@@ -1,0 +1,12 @@
+.authorization-form__submit-button_disabled {
+  box-sizing: border-box;
+  opacity: 0.2;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.authorization-form__submit-button_disabled:hover {
+  opacity: 0.2;
+  cursor: unset;
+}

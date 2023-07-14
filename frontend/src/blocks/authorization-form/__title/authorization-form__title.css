@@ -1,0 +1,23 @@
+.authorization-form__title {
+  color: #fff;
+  padding: 24px 0 40px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .authorization-form__title {
+    font-size: 20px;
+    padding-bottom: 65px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .authorization-form__title {
+    font-size: 18px;
+    padding-bottom: 71px;
+  }
+}
