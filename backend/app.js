@@ -15,16 +15,6 @@ const app = express();
 
 mongoose.connect(MONGODB_URL);
 
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-
-app.use(helmet());
-app.use(limiter);
-
 const corsOptions = {
   origin: [
     'http://localhost:3000',
@@ -35,6 +25,16 @@ const corsOptions = {
 
 app.options('*', cors(corsOptions));
 app.use(cors(corsOptions));
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+app.use(helmet());
+app.use(limiter);
 
 app.use(express.json());
 app.use(requestLogger);
