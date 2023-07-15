@@ -24,6 +24,7 @@ const corsOptions = {
 };
 
 app.options('*', cors(corsOptions));
+app.use(express.json());
 app.use(cors(corsOptions));
 
 const limiter = rateLimit({
@@ -36,7 +37,6 @@ const limiter = rateLimit({
 app.use(helmet());
 app.use(limiter);
 
-app.use(express.json());
 app.use(requestLogger);
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateCreateUser, createUser);
