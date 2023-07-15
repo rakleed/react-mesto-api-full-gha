@@ -12,7 +12,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.107.116
+IP 158.160.107.116
 
 Frontend https://express-mesto-gha-rakleed.nomoredomains.xyz
 
