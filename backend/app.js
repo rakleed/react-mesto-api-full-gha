@@ -15,6 +15,7 @@ const app = express();
 
 mongoose.connect(MONGODB_URL);
 
+app.options('*', cors());
 app.use(cors());
 app.use(helmet());
 
