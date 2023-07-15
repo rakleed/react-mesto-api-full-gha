@@ -84,7 +84,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://api.express-mesto-rakleed.nomoredomains.xyz'
+  baseUrl: 'https://api.express-mesto-rakleed.nomoredomains.xyz'
 });
 
 export default api;
