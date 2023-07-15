@@ -42,8 +42,8 @@ function App() {
       })
         .then(res => {
           setIsLoggedIn(true);
-          setEmail(res.data.email);
-          navigate("/", {replace: true})
+          setEmail(res.email);
+          navigate("/", {replace: true});
         })
         .catch(() => {
           setIsLoggedIn(false);

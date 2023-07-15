@@ -1,6 +1,8 @@
+import { BACKEND_BASE_URL } from './constants.js';
+
 class Api {
-  constructor({ baseUrl }) {
-    this._baseUrl = baseUrl;
+  constructor() {
+    this._baseUrl = BACKEND_BASE_URL;
   }
 
   _checkResponse(res) {
@@ -83,8 +85,6 @@ class Api {
   }
 }
 
-const api = new Api({
-  baseUrl: 'https://api.express-mesto-rakleed.nomoredomains.xyz'
-});
+const api = new Api();
 
 export default api;
