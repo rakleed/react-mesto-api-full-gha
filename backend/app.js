@@ -15,8 +15,17 @@ const app = express();
 
 mongoose.connect(MONGODB_URL);
 
-app.options('*', cors());
-app.use(cors());
+const corsOptions = {
+  origin: [
+    // 'http://localhost:3000',
+    // 'http://localhost:3001',
+    'http://express-mesto-gha-rakleed.nomoredomains.xyz',
+    'https://express-mesto-gha-rakleed.nomoredomains.xyz',
+  ],
+};
+
+app.use(cors(corsOptions));
+
 app.use(helmet());
 
 app.use(requestLogger);
