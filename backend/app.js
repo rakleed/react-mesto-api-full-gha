@@ -15,20 +15,12 @@ const app = express();
 
 mongoose.connect(MONGODB_URL);
 
-const corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    'http://express-mesto-gha-rakleed.nomoredomains.xyz',
-    'https://express-mesto-gha-rakleed.nomoredomains.xyz',
-  ],
-};
-
-app.options('*', cors(corsOptions));
-app.use(express.json());
-app.use(cors(corsOptions));
-
+app.use(cors());
 app.use(helmet());
+
 app.use(requestLogger);
+
+app.use(express.json());
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
