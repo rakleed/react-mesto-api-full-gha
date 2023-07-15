@@ -27,7 +27,7 @@ app.use(limiter);
 
 const corsOptions = {
   origin: [
-    'localhost:3000',
+    'http://localhost:3000',
     'http://express-mesto-gha-rakleed.nomoredomains.xyz',
     'https://express-mesto-gha-rakleed.nomoredomains.xyz',
   ],
