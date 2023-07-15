@@ -1,8 +1,6 @@
 class Api {
-  constructor({ baseUrl, headers }) {
+  constructor({ baseUrl }) {
     this._baseUrl = baseUrl;
-    this._headers = headers;
-    this._authorization = headers.authorization;
   }
 
   _checkResponse(res) {
@@ -16,7 +14,7 @@ class Api {
   _getRequest(urlPath) {
     return fetch(`${this._baseUrl}${urlPath}`, {
       headers: {
-        authorization: this._authorization
+        authorization: `Bearer ${localStorage.getItem('token')}`
       }
     })
       .then(this._checkResponse);
@@ -25,7 +23,10 @@ class Api {
   _setRequest(urlPath, requestMethod) {
     return fetch(`${this._baseUrl}${urlPath}`, {
       method: requestMethod,
-      headers: this._headers
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      }
     })
       .then(this._checkResponse);
   }
@@ -33,7 +34,10 @@ class Api {
   _setRequestWithBody(urlPath, requestMethod, requestBody) {
     return fetch(`${this._baseUrl}${urlPath}`, {
       method: requestMethod,
-      headers: this._headers,
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(requestBody)
     })
       .then(this._checkResponse);
@@ -80,11 +84,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://api.express-mesto-rakleed.nomoredomains.xyz',
-  headers: {
-    authorization: `Bearer ${localStorage.getItem('token')}`,
-    'Content-Type': 'application/json'
-  }
+  baseUrl: 'http://api.express-mesto-rakleed.nomoredomains.xyz'
 });
 
 export default api;

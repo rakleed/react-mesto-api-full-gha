@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
+const cors = require('cors');
 const { errors } = require('celebrate');
 const auth = require('./middlewares/auth');
 const { validateLogin, validateCreateUser } = require('./middlewares/validation');
@@ -23,6 +24,17 @@ const limiter = rateLimit({
 
 app.use(helmet());
 app.use(limiter);
+
+const corsOptions = {
+  origin: [
+    'localhost:3000',
+    'http://express-mesto-gha-rakleed.nomoredomains.xyz',
+    'https://express-mesto-gha-rakleed.nomoredomains.xyz',
+  ],
+};
+
+app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(requestLogger);
