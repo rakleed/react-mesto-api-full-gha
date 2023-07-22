@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 module.exports.MONGODB_URL = 'mongodb://127.0.0.1:27017/mestodb';
-module.exports.PORT = 3000;
+module.exports.PORT = 3003;
 
 module.exports.SECRET_PASSWORD_KEY = process.env.NODE_ENV === 'production' ? process.env.JWT_SECRET : 'some-secret-key';
 
