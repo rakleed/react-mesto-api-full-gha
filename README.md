@@ -1,19 +1,31 @@
-[![Статус тестов](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
+# Места России
 
-# react-mesto-api-full
+https://react-mesto-api-full-gha-rakleed.vercel.app/
 
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения 
+Репозиторий для приложения проекта «Места России», включающий фронтенд и бэкенд части приложения 
 со следующими возможностями: авторизации и регистрации пользователей, операции с карточками 
-и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд — в `frontend/`. 
-  
-Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
+и пользователями.
+Практиковался в написании серверной части на Node.js, Express.js, MongoDB.
+Фронтенд написан на React.
 
-Адрес репозитория: https://github.com/rakleed/react-mesto-api-full-gha
+## Как локально запустить проект
 
-## Ссылки на проект
+### Бэкенд
 
-IP 158.160.107.116
+Нужен [Node 20 LTS](https://nodejs.org/en/download/) 
+и запущенная [MongoDB](https://www.mongodb.com/docs/manual/administration/install-community/).
 
-Frontend https://express-mesto-gha-rakleed.nomoredomains.xyz
+1. Установить зависимости `npm install`
+2. В `app.js` раскомментировать строку `'http://localhost:3000'`
+для корректной работы CORS (для деплоя нужно добавить ваш домен)
+3. Запустить проект `npm start` 
 
-Backend https://api.express-mesto-rakleed.nomoredomains.xyz
+### Фронтенд
+
+1. Установить зависимости `npm install`
+2. В `src/utils/constants.js` раскомментировать первую строку (при деплое указать нужный адрес бэкенда)
+2. Запустить проект `npm run start` (при деплое собрать проект `npm run build`)
+
+## Планы по доработке проекта
+
+Настроить CI/CD для автоматического деплоя на сервер.
